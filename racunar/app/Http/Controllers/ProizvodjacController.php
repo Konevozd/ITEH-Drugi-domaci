@@ -7,7 +7,7 @@ use App\Models\Proizvodjac;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ProizvodjacController extends Controller
+class ProizvodjacController extends ResultController
 {
     public function index()
     {
