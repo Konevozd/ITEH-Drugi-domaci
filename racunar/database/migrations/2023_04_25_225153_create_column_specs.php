@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('proizvodjac', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('proizvodjac');
-            $table->timestamps();
+        Schema::table('racunar', function (Blueprint $table) {
+            $table->string('specifikacija')->after('tipID');
         });
     }
 
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proizvodjac');
+        // Schema::table('racunar', function (Blueprint $table) {
+        //     //
+        // });
     }
 };
