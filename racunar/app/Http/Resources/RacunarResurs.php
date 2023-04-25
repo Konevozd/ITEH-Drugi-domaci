@@ -16,7 +16,7 @@ class RacunarResurs extends JsonResource
      */
     public function toArray($request)
     {
-
+        //daj mi imena umesto ID-eva
         $tip = Tip::find($this->tipID);
         $proizvodjac = Proizvodjac::find($this->proizvodjacID);
 
