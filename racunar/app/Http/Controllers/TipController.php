@@ -16,11 +16,6 @@ class TipController extends ResultController
         return $this->successed(TipResurs::collection($tipovi),'Svi tipovi');
     }
 
-    public function create()
-    {
-        
-    }
-
     public function store(Request $request)
     {
         $input = $request->all();   //save all from request in input
@@ -47,11 +42,6 @@ class TipController extends ResultController
         return $this->successed(new TipResurs($tip),'Tip sa id: ' + $tipID);
     }
 
-    public function edit(Post $post)
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
         $stari = Tip::find($id);
@@ -72,7 +62,7 @@ class TipController extends ResultController
         
         $stari->save();
 
-        return $this->successed(new TipResurs($stari), 'Uspesno sacuvan novi tip');
+        return $this->successed(new TipResurs($stari), 'Uspesno azuriran tip');
     }
 
     public function destroy($id)
