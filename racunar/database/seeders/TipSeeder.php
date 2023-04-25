@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tip;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,16 @@ class TipSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Tip::create([
+            'tip' => 'Stoni'
+        ]);
+
+        Tip::create([
+            'tip' => 'Mobilni'
+        ]);
+
+        Tip::create([
+            'tip' => 'Laptop'
+        ]);
     }
 }
