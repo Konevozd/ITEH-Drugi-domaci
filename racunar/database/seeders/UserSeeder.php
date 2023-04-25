@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Racunar;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
-class RacunarSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,16 +16,16 @@ class RacunarSeeder extends Seeder
      */
     public function run()
     {
+        $password = Hash::make('admin');   //pass = admin
         $faker = \Faker\Factory::create();
 
         $i = 0;
         while($i < 25) {
-            
-            Racunar::create([
-                'proizvodjacID' => rand(1,3),
-                'model' => $faker->numerify(),
-                'tipID' => rand(1,3),
-                'specifikacija' => $faker->sentence(25)
+
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => $password
             ]);
 
             $i = $i + 1;
