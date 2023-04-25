@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Proizvodjac;
+use App\Models\Tip;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RacunarResurs extends JsonResource
@@ -14,6 +16,16 @@ class RacunarResurs extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+
+        $tip = Tip::find($this->tipID);
+        $proizvodjac = Proizvodjac::find($this->proizvodjacID);
+
+        return [
+            'id' => $this->id,
+            'proizvodjac' => $proizvodjac->proizvodjac,
+            'model' => $this->model,
+            'tip' => $tip->tip,
+            'specifikacija' => $this->specifikacija
+        ];
     }
 }
