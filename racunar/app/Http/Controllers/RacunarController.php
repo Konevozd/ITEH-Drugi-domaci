@@ -50,7 +50,7 @@ class RacunarController extends ResultController
         $stari = Racunar::find($id);
 
         if(is_null($stari))
-            return $this->unsuccessful('Racunar sa id:' + $id + ' ne postoji');
+            return $this->unsuccessful('Racunar sa trazenim id-em ne postoji');
 
         $validator = Validator::make($request->all(), [
             'proizvodjacID' => 'required',
@@ -79,7 +79,7 @@ class RacunarController extends ResultController
         $racunar = Racunar::find($id);
 
         if(is_null($racunar))
-            return $this->unsuccessful('Racunar sa id: ' + $id + ' ne postoji');
+            return $this->unsuccessful('Racunar sa trazenim id-em ne postoji');
         
         $racunar->delete();
 

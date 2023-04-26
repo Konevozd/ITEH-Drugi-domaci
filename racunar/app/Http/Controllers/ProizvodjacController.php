@@ -46,7 +46,7 @@ class ProizvodjacController extends ResultController
         $stari = Proizvodjac::find($id);
 
         if(is_null($stari))
-            return $this->unsuccessful('Proizvodjac sa id:' + $id + ' ne postoji');
+            return $this->unsuccessful('Proizvodjac sa trazenim id-em ne postoji');
 
         $validator = Validator::make($request->all(), [
             'proizvodjac' => 'required|string|max:100',
@@ -69,7 +69,7 @@ class ProizvodjacController extends ResultController
         $proizvodjac = Proizvodjac::find($id);
 
         if(is_null($proizvodjac))
-            return $this->unsuccessful('Proizvodjac sa id: ' + $id + ' ne postoji');
+            return $this->unsuccessful('Proizvodjac sa trazenim id-em ne postoji');
         
         $proizvodjac->delete();
 

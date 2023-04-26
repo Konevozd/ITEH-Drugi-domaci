@@ -47,7 +47,7 @@ class TipController extends ResultController
         $stari = Tip::find($id);
 
         if(is_null($stari))
-            return $this->unsuccessful('Tip sa id:' + $id + ' ne postoji');
+            return $this->unsuccessful('Tip sa trazenim id-em ne postoji');
 
         $validator = Validator::make($request->all(), [
             'tip' => 'required|string|max:100',
@@ -70,7 +70,7 @@ class TipController extends ResultController
         $tip = Tip::find($id);
 
         if(is_null($tip))
-            return $this->unsuccessful('Tip sa id: ' + $id + ' ne postoji');
+            return $this->unsuccessful('Tip sa trazenim id-em ne postoji');
         
         $tip->delete();
 
