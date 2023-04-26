@@ -71,7 +71,7 @@ class RacunarController extends ResultController
         
         $stari->save();
 
-        return $this->successed(new RacunarResurs($stari), 'Uspesno azuriran racunar ' + $id);
+        return $this->successed(new RacunarResurs($stari), 'Uspesno azuriran racunar ');
     }
 
     public function destroy($id)

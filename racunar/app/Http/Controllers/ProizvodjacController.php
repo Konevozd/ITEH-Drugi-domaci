@@ -61,7 +61,7 @@ class ProizvodjacController extends ResultController
         
         $stari->save();
 
-        return $this->successed(new ProizvodjacResurs($stari), 'Uspesno azuriran proizvodjac ' + $id);
+        return $this->successed(new ProizvodjacResurs($stari), 'Uspesno azuriran proizvodjac');
     }
 
     public function destroy($id)
