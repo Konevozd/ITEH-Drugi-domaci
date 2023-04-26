@@ -37,9 +37,9 @@ class TipController extends ResultController
         $tip = Tip::find($tipID);
 
         if(is_null($tip))
-            return $this->unsuccessful('Tip sa id-em:' + $tipID + ' ne postoji');
+            return $this->unsuccessful('Tip sa trazenim id-em ne postoji');
         
-        return $this->successed(new TipResurs($tip),'Tip sa id: ' + $tipID);
+        return $this->successed(new TipResurs($tip),'Tip sa trazenim id-em ');
     }
 
     public function update(Request $request, $id)

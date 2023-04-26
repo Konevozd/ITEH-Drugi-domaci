@@ -36,9 +36,9 @@ class ProizvodjacController extends ResultController
         $proizvodjac = Proizvodjac::find($id);
 
         if(is_null($proizvodjac))
-            return $this->unsuccessful('Proizvodjac sa id-em:' + $id + ' ne postoji');
+            return $this->unsuccessful('Proizvodjac sa trazenim id-em ne postoji');
         
-        return $this->successed(new ProizvodjacResurs($proizvodjac),'Proizvodjac id: ' + $id);
+        return $this->successed(new ProizvodjacResurs($proizvodjac),'Proizvodjac sa trazenim id-em');
     }
 
     public function update(Request $request, $id)

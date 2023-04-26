@@ -39,9 +39,10 @@ class RacunarController extends ResultController
         $racunar = Racunar::find($id);
 
         if(is_null($racunar))
-            return $this->unsuccessful('Racunar sa id-em:' + $id + ' ne postoji');
+            return $this->unsuccessful('Racunar sa trazenim id-em ne postoji');
         
-        return $this->successed(new RacunarResurs($racunar),'Racunar id: ' + $id);
+        return $this->successed(new RacunarResurs($racunar),'Racunar nadjen sa trazenim id-em');
+        //zasto ne moze konkatenacija, tj. spajanje stringova, da ubacim id u poruku
     }
 
     public function update(Request $request, $id)
